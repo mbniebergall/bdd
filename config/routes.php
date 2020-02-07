@@ -38,6 +38,13 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
 
     $app->get('/api/helloworld/:name', App\Api\HelloWorld\HelloWorldAction::class, 'api-hello-world');
 
+    $app->get('/api/adder/:number1/:number2', App\Api\Adder\AdderAction::class, 'api-adder');
+
+    $app->post('/api/passwordchecker', App\Api\PasswordChecker\PasswordCheckerAction::class, 'api-passwordchecker');
+
+    $app->post('/api/degrees_converter', App\Api\DegreesConverter\DegreesConverterAction::class, 'api-degreesconverter');
+
+
     $app->post(
         '/api/change',
         [

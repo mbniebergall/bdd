@@ -180,6 +180,17 @@ class FeatureContext implements Context
         );
     }
 
+    /**
+     * @Given /^I store the sum of "(.*)" and "(.*)" in the variable %(.*)%$/
+     */
+    public function iStoreTheSumOf($number1, $number2, $fieldName)
+    {
+        $this->storedValues[$fieldName] = [
+            'search' => $fieldName,
+            'replace' => $number1 + $number2,
+        ];
+    }
+
     public function prepareString($string)
     {
         $prepared = $this->storedValues->reduce(

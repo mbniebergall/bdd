@@ -21,5 +21,4 @@ class ChangeGeneratorAction implements RequestHandlerInterface
             ]
         );
     }
-
 }

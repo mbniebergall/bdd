@@ -26,12 +26,22 @@ class HelloWorldAction implements RequestHandlerInterface
             );
         }
 
+        if (preg_match('/[0-9]/', $name)) {
+            $response = new ApiProblem(
+                422,
+                'Name must not include digits'
+            );
+
+            return new JsonResponse(
+                $response->toArray(),
+                $response->status
+            );
+        }
+
         return new JsonResponse(
             [
                 'greeting' => 'Hello ' . $name,
             ]
         );
     }
-
-    // Test success!
 }

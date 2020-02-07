@@ -5,3 +5,8 @@ default:
         - FeatureContext:
             baseUrl: http://127.0.0.1:8088
 
+    qa:
+      contexts:
+        - FeatureContext:
+            baseUrl: https://qa.example.com
+
